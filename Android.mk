@@ -1,3 +1,4 @@
+ifeq ($(TARGET_POWERHAL_VARIANT),)
 # TODO:  Find a better way to separate build configs for ADP vs non-ADP devices
 ifneq ($(TARGET_BOARD_AUTO),true)
   ifneq ($(filter msm8960 msm8974,$(TARGET_BOARD_PLATFORM)),)
@@ -17,4 +18,5 @@ ifneq ($(TARGET_BOARD_AUTO),true)
     LOCAL_MODULE_TAGS := optional
     include $(BUILD_SHARED_LIBRARY)
   endif
+endif
 endif
